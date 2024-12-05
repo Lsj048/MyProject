@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算子信息展示</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <div class="sidebar">
+            <h2>算子列表</h2>
+            <ul>
+                {% for category, operators in operators_info.items() %}
+                    <li class="category">
+                        <div class="category-header" onclick="toggleCategory('{{ category }}')">
+                            <h3>{{ category }}</h3>
+                        </div>
+                        <ul id="{{ category }}" class="operator-list">
+                            {% for operator in operators %}
+                                <li>
+                                    <a href="#{{ operator.name }}" class="operator-link">{{ operator.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- 右侧内容区 -->
+        <div class="content">
+            <h1>video-graph算子学习</h1> <!-- 添加的标题 -->
+
+            {% for category, operators in operators_info.items() %}
+                {% for operator in operators %}
+                    <div id="{{ operator.name }}" class="operator-info">
+                        <div class="operator-card">
+                            <h2>
+                                {{ operator.name }}
+                                {% if operator.href %}
+                                    <a href="{{ operator.href }}" target="_blank" class="operator-link-icon">
+                                        <i class="fab fa-python python-icon"></i>
+                                    </a>
+                                {% endif %}
+                            </h2>
+                            <h3>Attributes</h3>
+                            <ul>
+                                {% for attr_name, attr_info in operator.attributes.items() %}
+                                    <li><strong>{{ attr_name }}:</strong> {{ attr_info.type }} - {{ attr_info.desc }}</li>
+                                {% endfor %}
+                            </ul>
+                            <h3>Examples</h3>
+                            <pre><code>{{ operator.examples }}</code></pre>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        // 页面滚动平滑跳转
+        document.querySelectorAll('.operator-link').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1); // 获取跳转的目标 ID
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' }); // 平滑滚动到目标元素
+                }
+            });
+        });
+
+        // 收起/展开类别
+        function toggleCategory(category) {
+            const operatorList = document.getElementById(category);
+
+            // 使用 max-height 来实现展开/收起效果
+            if (operatorList.style.maxHeight) {
+                operatorList.style.maxHeight = null;
+            } else {
+                operatorList.style.maxHeight = operatorList.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>

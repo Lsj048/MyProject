@@ -63,4 +63,5 @@ def index():
     return render_template('index.html', operators_info=operators_info)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000
+    app.run(debug=False, host='0.0.0.0', port=port)

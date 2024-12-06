@@ -16,7 +16,8 @@ from video_graph.op_context import OpContext
 
 class VideoRenderNewOp(Op):
     """
-    【remote】视频渲染算子，根据项目模型构建器和输入文件映射，发送到Minecraft服务端渲染视频
+    Function:
+        视频渲染算子，根据项目模型构建器和输入文件映射，发送到Minecraft服务端渲染视频
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

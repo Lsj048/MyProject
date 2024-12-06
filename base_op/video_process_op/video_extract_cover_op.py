@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class VideoExtractCoverOp(Op):
     """
-    【local】提取视频封面，输出视频的第一帧作为封面
+    Function:
+        提取视频封面，输出视频的第一帧作为封面
 
     Attributes:
         video_file_column (str, optional): 视频文件路径所在的列名，默认为"video_file_path"。

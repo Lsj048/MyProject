@@ -4,7 +4,8 @@ from video_graph.op_context import OpContext
 
 class RunPythonScriptOp(Op):
     """
-    【local】运行 python 脚本，脚本中可以处理 op_context 中的数据，实现自定义逻辑
+    Function:
+        运行 python 脚本，脚本中可以处理 op_context 中的数据，实现自定义逻辑
 
     Attributes:
         import_script (str): 导入包脚本。

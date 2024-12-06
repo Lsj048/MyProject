@@ -10,7 +10,8 @@ from video_graph.op_context import OpContext
 
 class ExtractColumnFromKconfOp(Op):
     """
-    【local】从 KConf 列中提取列算子，支持 json 和 tail_number 类型的 KConf
+    Function:
+        从 KConf 列中提取列算子，支持 json 和 tail_number 类型的 KConf
 
     Attributes:
         kconf_key_name (str): KConf Key 名称。

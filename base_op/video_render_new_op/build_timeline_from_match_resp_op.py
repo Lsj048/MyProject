@@ -13,7 +13,8 @@ from video_graph.op_context import OpContext
 
 class BuildTimelineFromMatchRespOp(Op):
     """
-    【local】根据匹配结果构建Timeline，根据匹配结果构建时间线，包括视频和音频
+    Function:
+        根据匹配结果构建Timeline，根据匹配结果构建时间线，包括视频和音频
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

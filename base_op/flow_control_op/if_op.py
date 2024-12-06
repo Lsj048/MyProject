@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class IfOp(Op):
     """
-    【local】if条件表达式算子，用于判断条件表达式是否为True
+    Function:
+        if条件表达式算子，用于判断条件表达式是否为True
 
     Attributes:
         table_index (int): 输入表格索引，默认为0。

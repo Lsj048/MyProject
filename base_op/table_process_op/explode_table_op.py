@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class ExplodeTableOp(Op):
     """
-    【local】按列炸开算子，对输入列表做展开，可以选择只保留部分列，默认保留全部列
+    Function:
+        按列炸开算子，对输入列表做展开，可以选择只保留部分列，默认保留全部列
 
     Attributes:
         table_name (str): 炸开后的表格名称。

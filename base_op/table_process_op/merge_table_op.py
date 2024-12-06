@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class MergeTableOp(Op):
     """
-    【local】多表合并算子，表格按行合并，输出表取输入表的列的并集，缺失列填充为 None
+    Function:
+        多表合并算子，表格按行合并，输出表取输入表的列的并集，缺失列填充为 None
 
     Attributes:
         table_name (str): 合并后的表格名称。

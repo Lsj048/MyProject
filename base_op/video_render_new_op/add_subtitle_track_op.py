@@ -11,7 +11,8 @@ from video_graph.op_context import OpContext
 
 class AddSubtitleTrackOp(Op):
     """
-    【local】增加字幕轨算子, 可以设置字幕的字体、颜色、描边等属性
+    Function:
+        增加字幕轨算子, 可以设置字幕的字体、颜色、描边等属性
     TODO: 输入表顺序调整一下
 
     Attributes:

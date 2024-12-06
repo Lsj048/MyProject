@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class AddVideoOp(Op):
     """
-    增加视频片段算子
+    Function:
+        增加视频片段算子
 
     Attributes:
         request_column (str): 请求列名，默认为"request"。

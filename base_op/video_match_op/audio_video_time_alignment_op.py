@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class AudioVideoTimeAlignmentOp(Op):
     """
-    【local】音频与视频时间对齐，为选用的视频添加开始时间和结束时间
+    Function:
+        音频与视频时间对齐，为选用的视频添加开始时间和结束时间
 
     Attributes:
         audio_duration_column (str): 音频时长列名，默认为"audio_duration"

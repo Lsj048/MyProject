@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class EmptyTableCheck(Op):
     """
-    【local】空表检查算子，空表则返回False
+    Function:
+        空表检查算子，空表则返回False
 
     Attributes:
         无

@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class MusicDetectionOp(Op):
     """
-    【remote】音乐检测算子，用于检测音频文件中的音乐部分和人声部分，输出音乐检测结果
+    Function:
+        音乐检测算子，用于检测音频文件中的音乐部分和人声部分，输出音乐检测结果
 
     Attributes:
         audio_feature_column (str): 音频特征列的名称，默认为"audio_feature"。

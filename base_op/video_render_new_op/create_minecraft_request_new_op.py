@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class CreateMinecraftRequestNewOp(Op):
     """
-    【local】构造minecraft request新算子，可以构造一个或多个request
+    Function:
+        构造minecraft request新算子，可以构造一个或多个request
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

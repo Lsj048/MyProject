@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class JoinTableOp(Op):
     """
-    【local】两表 join 算子，支持 left/right/inner/outer 四种 join 方式
+    Function:
+        两表 join 算子，支持 left/right/inner/outer 四种 join 方式
 
     Attributes:
         table_name (str): join 后的表格名称

@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class AudioExtractAsrOp(Op):
     """
-    【remote】抽取音频ASR算子，调用服务接口获取音频ASR文本，输出ASR文本和ASR字幕
+    Function:
+        抽取音频ASR算子，调用服务接口获取音频ASR文本，输出ASR文本和ASR字幕
 
     Attributes:
         audio_file_column (str): 音频文件所在列的名称，默认为"audio_file"。

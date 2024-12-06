@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class BuildTableOp(Op):
     """
-    【local】构建空表算子，构建特定表名和列名的空表，为了构建成功，至少包含一个默认列"not_defined"
+    Function:
+        构建空表算子，构建特定表名和列名的空表，为了构建成功，至少包含一个默认列"not_defined"
 
     Attributes:
         table_name (str): 表名

@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class FlatDoubleListOp(Op):
     """
-    【local】将双层list结构打平为一层
+    Function:
+        将双层list结构打平为一层
 
     Attributes:
         source_column (str): 源列名

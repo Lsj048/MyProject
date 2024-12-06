@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class ExtractColumnFromRedisOp(Op):
     """
-    【local】从 Redis 中提取列算子，仅支持字符串类型的 Value
+    Function:
+        从 Redis 中提取列算子，仅支持字符串类型的 Value
 
     Attributes:
         redis_cluster (str): Redis 集群名称。

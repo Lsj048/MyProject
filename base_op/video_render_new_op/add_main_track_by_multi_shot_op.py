@@ -12,11 +12,12 @@ from video_graph.op_context import OpContext
 
 class AddMainTrackByMultiShotOp(Op):
     """
-    【local】从标准输入表中添加视频主轨，基于一个标准结构render_video_list来生成，其中包含四部分：
-    * video_idx：视频表的index
-    * start_time：视频片段开始时间
-    * end_time：视频片段结束时间
-    * speed：播放速度
+    Function:
+        从标准输入表中添加视频主轨，基于一个标准结构render_video_list来生成，其中包含四部分：
+        * video_idx：视频表的index
+        * start_time：视频片段开始时间
+        * end_time：视频片段结束时间
+        * speed：播放速度
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

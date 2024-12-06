@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class ExtractTitleFromOcrOp(Op):
     """
-    【local】从 ocr 中提取标题
+    Function:
+        从 ocr 中提取标题
 
     Attributes:
         video_ocr_column (str): 视频 ocr 列名，默认为 "ocr"。

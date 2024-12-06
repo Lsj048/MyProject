@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class TextVideoMatchPrepareOp(Op):
     """
-    【local】文本视频匹配数据准备算子，准备切片相关的信息
+    Function:
+        文本视频匹配数据准备算子，准备切片相关的信息
 
     Attributes:
         video_shot_clip_column (str): 视频切片列名，默认为"shot_clip"

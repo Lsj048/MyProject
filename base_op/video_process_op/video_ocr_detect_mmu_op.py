@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class VideoOcrDetectMmuOp(Op):
     """
-    【remote】通过 mmu 接口进行 ocr 检测
+    Function:
+        通过 mmu 接口进行 ocr 检测
 
     Attributes:
         video_blob_key_column (str): 视频BlobKey所在的列名，默认为"video_blob_key"

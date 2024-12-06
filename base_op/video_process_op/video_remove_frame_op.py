@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class VideoRemoveFrameOp(Op):
     """
-    【local】移除视频中的某一帧，得到一个新视频文件
+    Function:
+        移除视频中的某一帧，得到一个新视频文件
 
     Attributes:
         input_file_column (str): 输入视频文件路径所在的列名，默认为"video_file_path"

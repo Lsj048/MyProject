@@ -10,7 +10,8 @@ from video_graph.op_context import OpContext
 
 class AddSubVideoTrackOp(Op):
     """
-    【local】增加副视频轨算子
+    Function:
+        增加副视频轨算子
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

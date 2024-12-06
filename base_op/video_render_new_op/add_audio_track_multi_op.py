@@ -11,7 +11,8 @@ from video_graph.op_context import OpContext
 
 class AddAudioTrackMultiOp(Op):
     """
-    【local】批量增加音频轨算子，应对有多个时间轨道的情况，将shot_table的每一行作为一个音频添加到timeline_table对应行的时间轴上
+    Function:
+        批量增加音频轨算子，应对有多个时间轨道的情况，将shot_table的每一行作为一个音频添加到timeline_table对应行的时间轴上
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

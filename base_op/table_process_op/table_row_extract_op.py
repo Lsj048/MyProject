@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class TableRowExtractOp(Op):
     """
-    【local】表的行提取算子，建议用TableQueryOp
+    Function:
+        表的行提取算子，建议用TableQueryOp
 
     Attributes:
         table_name (str): 表的名称

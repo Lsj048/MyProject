@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class RowTrimOp(Op):
     """
-    【local】行截断算子，支持选择保留头部或尾部的行，仅支持创建新表，不支持原地操作
+    Function:
+        行截断算子，支持选择保留头部或尾部的行，仅支持创建新表，不支持原地操作
 
     Attributes:
         reserve_num (int): 保留行数

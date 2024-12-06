@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class ExtractHighlightByGpt4oOp(Op):
     """
-    【remote】通过 gpt4o 提取高光
+    Function:
+        通过 gpt4o 提取高光
 
     Attributes:
         content_column (str): 输入文本列，默认为 "content"。

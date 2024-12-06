@@ -11,7 +11,8 @@ from video_graph.op_context import OpContext
 
 class VideoSplitOp(Op):
     """
-    【local】将长时间视频切分成若干个短视频，输出一个新表，存储切分后的视频信息
+    Function:
+        将长时间视频切分成若干个短视频，输出一个新表，存储切分后的视频信息
 
     Attributes:
         input:

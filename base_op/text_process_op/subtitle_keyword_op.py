@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class SubtitleKeywordOp(Op):
     """
-    【local】字幕关键字算子，用于在字幕文本中添加关键字信息
+    Function:
+        字幕关键字算子，用于在字幕文本中添加关键字信息
 
     Attributes:
         subtitle_group_column (str): 字幕组所在列的名称，默认为 "subtitle_group"。

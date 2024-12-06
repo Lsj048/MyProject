@@ -12,7 +12,8 @@ from video_graph.op_context import OpContext
 
 class VideoShotClipOp(Op):
     """
-    【remote】视频切镜算子，对视频按镜头切分，输出切片信息
+    Function:
+        视频切镜算子，对视频按镜头切分，输出切片信息
 
     Attributes:
         video_blob_key_column (str): 视频BlobKey所在的列名，默认为"video_blob_key"

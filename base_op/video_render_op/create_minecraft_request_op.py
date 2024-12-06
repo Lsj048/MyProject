@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class CreateMinecraftRequestOp(Op):
     """
-    构造minecraft request算子
+    Function:
+        构造minecraft request算子
 
     Attributes:
         request_column (str): 请求列名，默认为"request"。

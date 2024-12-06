@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class GenerateSubtitleByGpt4oOp(Op):
     """
-    【remote】通过 gpt4o 生成台词脚本
+    Function:
+        通过 gpt4o 生成台词脚本
 
     Attributes:
         subtitle_column (str): 台词列名，默认为 "subtitle"。

@@ -7,7 +7,8 @@ from video_graph.ops.light_function.function_manager import FunctionManager
 
 class InsertColumnOp(Op):
     """
-    【local】插入新列算子，支持以自定义函数方式计算新列值
+    Function:
+        插入新列算子，支持以自定义函数方式计算新列值
 
     Attributes:
         column_name (str): 新列名

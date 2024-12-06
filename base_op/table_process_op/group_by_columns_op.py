@@ -8,7 +8,8 @@ from video_graph.ops.light_function.function_manager import FunctionManager
 
 class GroupByColumnsOp(Op):
     """
-    【local】按列聚合算子，支持多列分组，多列聚合，聚合规则支持内置函数和自定义函数
+    Function:
+        按列聚合算子，支持多列分组，多列聚合，聚合规则支持内置函数和自定义函数
 
     Attributes:
         group_by_columns (list): 分组列名列表。

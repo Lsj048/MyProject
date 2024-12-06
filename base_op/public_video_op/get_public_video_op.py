@@ -9,7 +9,8 @@ from video_graph.common.utils.redis import RedisManager
 
 class GetPublicVideoOp(Op):
     """
-    【remote】获取公域视频算子，请求服务获取公域视频，输出公域视频列表
+    Function:
+        获取公域视频算子，请求服务获取公域视频，输出公域视频列表
 
     Attributes:
         first_industry_name_column (str): 一级行业名称列名，默认为"first_industry_name"。

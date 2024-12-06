@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class CorrectTextByGpt4oOp(Op):
     """
-    【remote】基于 gpt4o 纠正文本
+    Function:
+        基于 gpt4o 纠正文本
 
     Attributes:
         text_column (str): 文本列名，默认为 "text"。

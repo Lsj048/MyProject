@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class TableSortOp(Op):
     """
-    【local】表排序算子，支持多列排序、升序/降序排序、是否原地排序
+    Function:
+        表排序算子，支持多列排序、升序/降序排序、是否原地排序
 
     Attributes:
         column_list (list): 排序的列名列表

@@ -7,10 +7,11 @@ from video_graph.op_context import OpContext
 
 class TranslateTextOp(Op):
     """
-    【remote】翻译文本为指定语言，支持以下几种翻译：
-    * 葡萄牙语(pt) <-> 中文(ch)
-    * 印尼语(id) <-> 中文(ch)
-    * 英语(en) <-> 中文(ch)
+    Function:
+        翻译文本为指定语言，支持以下几种翻译：
+        * 葡萄牙语(pt) <-> 中文(ch)
+        * 印尼语(id) <-> 中文(ch)
+        * 英语(en) <-> 中文(ch)
 
     Attributes:
         text_column (str): 待翻译的文本列名，默认为"text"。

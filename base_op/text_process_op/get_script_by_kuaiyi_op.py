@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class GetScriptByKuaiyiOp(Op):
     """
-    【remote】通过快意模型获取脚本，仅支持1.0格式的脚本
+    Function:
+        通过快意模型获取脚本，仅支持1.0格式的脚本
 
     Attributes:
         product_name_column (str): 产品名称列名，默认为 "product_name"。

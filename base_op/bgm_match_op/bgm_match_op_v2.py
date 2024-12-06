@@ -10,7 +10,8 @@ from video_graph.op_context import OpContext
 
 class BgmMatchOpV2(Op):
     """
-    【remote】音乐匹配V2算子，相比BgmMatchOp，增加了二级行业和BGM版本的控制
+    Function:
+        音乐匹配V2算子，相比BgmMatchOp，增加了二级行业和BGM版本的控制
 
     Attributes:
         video_list_column (str): 视频列表列名，默认为"video_list"。

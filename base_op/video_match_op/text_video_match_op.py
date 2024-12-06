@@ -10,7 +10,8 @@ from video_graph.op_context import OpContext
 
 class TextVideoMatchOp(Op):
     """
-    【remote】文本视频匹配算子，输出匹配的视频列表和原始的匹配结果
+    Function:
+        文本视频匹配算子，输出匹配的视频列表和原始的匹配结果
 
     Attributes:
         fixed_caption_column (str): 固定字幕列名，默认为"fixed_caption"

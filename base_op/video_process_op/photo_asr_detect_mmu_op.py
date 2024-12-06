@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class PhotoAsrDetectMmuOp(Op):
     """
-    【remote】通过 mmu 接口对 photo_id 进行 asr 检测，会优先使用缓存结果
+    Function:
+        通过 mmu 接口对 photo_id 进行 asr 检测，会优先使用缓存结果
 
     Attributes:
         photo_id_column (str): photo_id所在的列名，默认为"photo_id"

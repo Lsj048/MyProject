@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class ExtractColumnFromDictOp(Op):
     """
-    【local】从字典列中提取列算子，支持 jsonpath 匹配方式，可参考：https://blog.csdn.net/qq_15994257/article/details/120047941
+    Function:
+        从字典列中提取列算子，支持 jsonpath 匹配方式，可参考：https://blog.csdn.net/qq_15994257/article/details/120047941
 
     Attributes:
         dict_column (str): 字典列名。

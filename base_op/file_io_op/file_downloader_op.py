@@ -10,7 +10,8 @@ from video_graph.op_context import OpContext
 
 class FileDownloaderOp(Op):
     """
-    【local】文件下载算子，用于下载 Blob 存储中的文件到本地
+    Function:
+        文件下载算子，用于下载 Blob 存储中的文件到本地
 
     Attributes:
         file_blob_key_column (str): 输入表格中存储文件 Blob Key 的列名。

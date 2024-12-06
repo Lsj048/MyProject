@@ -12,7 +12,8 @@ from video_graph.op_context import OpContext
 
 class VideoShotClipExtraOp(Op):
     """
-    【local】视频切镜信息补充算子，将视频的OCR信息和字幕信息拆分到切片粒度，并判断切片是否有效
+    Function:
+        视频切镜信息补充算子，将视频的OCR信息和字幕信息拆分到切片粒度，并判断切片是否有效
     TODO: 算子可拆分为多个子算子
 
     Attributes:

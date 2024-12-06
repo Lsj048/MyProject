@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+from doctest import debug
+
+import markdown2
+from flask import Flask, render_template, send_from_directory
 import os
 import ast
 import re
@@ -34,6 +37,12 @@ def parse_operator_file(file_path):
     docstring = re.search(r'\"\"\"(.*?)\"\"\"', content, re.DOTALL)
     docstring = docstring.group(1) if docstring else ""
 
+    # 提取 Function 部分
+    function_description = ""
+    function_match = re.search(r'Function:\s*(.*?)\n', docstring)
+    if function_match:
+        function_description = function_match.group(1).strip()
+
     # 提取 Attributes 部分
     attributes = {}
     attr_pattern = re.compile(r'^\s*(\w+)\s*\((.*?)\):\s*(.*)', re.M)
@@ -52,6 +61,7 @@ def parse_operator_file(file_path):
     # 返回算子信息
     return {
         'name': class_name,
+        'function': function_description,
         'attributes': attributes,
         'examples': example_code,
         'href': href
@@ -62,6 +72,17 @@ def index():
     operators_info = get_operator_info()
     return render_template('index.html', operators_info=operators_info)
 
+@app.route('/introduction')
+def about_video_graph():
+    with open('wiki/introduction.md', 'r', encoding='utf-8') as file:
+        content = file.read()
+    html_content = markdown2.markdown(content, extras=["fenced-code-blocks"])
+    return render_template('introduction.html', content=html_content)
+@app.route('/image/<filename>', methods=['GET'])
+def image(filename):
+  return send_from_directory('image', filename)
+
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000
-    app.run(debug=False, host='0.0.0.0', port=port)
+    #port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000
+    #app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(debug=False)

@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class BuildTimelineFromTableOp(Op):
     """
-    根据表数据构建Timeline
+    Function:
+        根据表数据构建Timeline
 
     Attributes:
         request_column (str): 请求列名，默认为"request"。

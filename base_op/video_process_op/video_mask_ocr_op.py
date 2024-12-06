@@ -11,7 +11,8 @@ from video_graph.op_context import OpContext
 
 class VideoMaskOcrOp(Op):
     """
-    【remote】视频字幕擦除算子，输出视频字幕擦除后视频的blob_key
+    Function:
+        视频字幕擦除算子，输出视频字幕擦除后视频的blob_key
 
     Attributes:
         video_blob_key_column (str): 视频BlobKey所在的列名，默认为"video_blob_key"

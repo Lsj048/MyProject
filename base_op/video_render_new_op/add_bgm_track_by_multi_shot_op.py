@@ -11,7 +11,8 @@ from video_graph.op_context import OpContext
 
 class AddBgmTrackByMultiShotOp(Op):
     """
-    【local】从标准输入表中添加BGM，基于audio_blob_key、audio_duration、need_bgm、shot_duration四个字段来生成，如果bgm时长短于镜号时长，会自动循环播放
+    Function:
+        从标准输入表中添加BGM，基于audio_blob_key、audio_duration、need_bgm、shot_duration四个字段来生成，如果bgm时长短于镜号时长，会自动循环播放
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

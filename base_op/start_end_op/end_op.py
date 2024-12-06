@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class EndOp(Op):
     """
-    【local】返回特定表的停止算子
+    Function:
+        返回特定表的停止算子
 
     Attributes:
         target_table_name (str): 目标表名。

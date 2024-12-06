@@ -5,9 +5,9 @@ from video_graph.op_context import OpContext
 
 class TableQueryOp(Op):
     """
-    【local】基于pandas的query接口实现的表数据查询过滤算子
-    相比于TableRowExtractOp和TableRowFilterOp，支持更灵活的语义
-    用法参考：https://note.nkmk.me/en/python-pandas-query/
+    Function:
+        基于pandas的query接口实现的表数据查询过滤算子，相比于TableRowExtractOp和TableRowFilterOp，支持更灵活的语义
+        用法参考：https://note.nkmk.me/en/python-pandas-query/
 
     Attributes:
         expression (str): 查询表达式

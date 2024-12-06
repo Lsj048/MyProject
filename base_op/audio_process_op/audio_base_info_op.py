@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class AudioBaseInfoOp(Op):
     """
-    【local】音频基本信息获取算子，输出音频时长
+    Function:
+        音频基本信息获取算子，输出音频时长
 
     Attributes:
         audio_file_column (str): 音频文件所在列的名称，默认为"audio_file"。

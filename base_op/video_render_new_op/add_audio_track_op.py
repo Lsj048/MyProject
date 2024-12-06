@@ -11,9 +11,10 @@ from video_graph.op_context import OpContext
 
 class AddAudioTrackOp(Op):
     """
-    【local】增加音频轨算子，video_index为-1时，表示批量增加音频到轨道上，可以选择stack和append两种模式，否则表示增加单个音频到轨道上
-    * stack：叠放模式，音频时间可重叠
-    * append：追加模式，音频时间不可重叠
+    Function:
+        增加音频轨算子，video_index为-1时，表示批量增加音频到轨道上，可以选择stack和append两种模式，否则表示增加单个音频到轨道上
+        * stack：叠放模式，音频时间可重叠
+        * append：追加模式，音频时间不可重叠
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

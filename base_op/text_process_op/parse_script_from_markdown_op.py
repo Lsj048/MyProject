@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class ParseScriptFromMarkDownOp(Op):
     """
-    【local】解析 markdown 格式脚本，转换为标准格式脚本
+    Function:
+        解析 markdown 格式脚本，转换为标准格式脚本
 
     Attributes:
         markdown_script_column (str): markdown 格式脚本列名，默认为 "markdown_script"。

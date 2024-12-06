@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class TableShuffleOp(Op):
     """
-    【local】表随机打散算子，按行随机
+    Function:
+        表随机打散算子，按行随机
 
     Attributes:
         无

@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class JsonLoadOp(Op):
     """
-    【local】json列转python对象算子
+    Function:
+        json列转python对象算子
 
     Attributes:
         source_column (str): 源列名

@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class ExtractColumnFromListDictOp(Op):
     """
-    【local】从字典列表列中提取列算子，输出为特定值组成的列表
+    Function:
+        从字典列表列中提取列算子，输出为特定值组成的列表
 
     Attributes:
         list_dict_column (str): 字典列表列名。

@@ -11,7 +11,8 @@ from video_graph.op_context import OpContext
 
 class SubtitleSplitByDurationOp(Op):
     """
-    【local】将视频的字幕信息按照切片时长分割
+    Function:
+        将视频的字幕信息按照切片时长分割
 
     Attributes:
         input:

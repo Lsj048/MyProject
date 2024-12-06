@@ -11,6 +11,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- 悬浮按钮，用于收起/展开导航栏 -->
+        <button class="sidebar-toggle-btn" id="sidebarToggle">
+            <i class="fas fa-bars"></i> <!-- 使用菜单图标 -->
+        </button>
+
         <!-- 左侧导航栏 -->
         <div class="sidebar">
             <h2>算子列表</h2>
@@ -31,10 +36,17 @@
                 {% endfor %}
             </ul>
         </div>
+
         <!-- 右侧内容区 -->
         <div class="content">
             <h1>video-graph算子学习</h1> <!-- 添加的标题 -->
-
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="搜索算子..." onkeyup="handleKeyPress(event)">
+                <button class="search-btn" onclick="searchOperators()">
+                    <i class="fas fa-search"></i> <!-- 查找图标 -->
+                </button>
+            </div>
+            <a href="/introduction" class="about-link" target="_blank">关于video-graph</a>
             {% for category, operators in operators_info.items() %}
                 {% for operator in operators %}
                     <div id="{{ operator.name }}" class="operator-info">
@@ -47,6 +59,9 @@
                                     </a>
                                 {% endif %}
                             </h2>
+                            <h3>Function</h3>
+                            <p class="operator-function">{{ operator.function }}</p>
+
                             <h3>Attributes</h3>
                             <ul>
                                 {% for attr_name, attr_info in operator.attributes.items() %}
@@ -61,6 +76,11 @@
             {% endfor %}
         </div>
     </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top-btn" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // 页面滚动平滑跳转
@@ -79,13 +99,100 @@
         function toggleCategory(category) {
             const operatorList = document.getElementById(category);
 
-            // 使用 max-height 来实现展开/收起效果
             if (operatorList.style.maxHeight) {
                 operatorList.style.maxHeight = null;
             } else {
                 operatorList.style.maxHeight = operatorList.scrollHeight + "px";
             }
         }
+
+        // 监听回车键按下事件
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                searchOperators();  // 按下回车键时触发搜索
+            }
+        }
+
+        // 搜索算子
+        function searchOperators() {
+            const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+            const operators = document.querySelectorAll('.operator-link');
+            let found = false;
+
+            // 清除之前的高亮
+            operators.forEach(op => {
+                op.classList.remove('highlight');
+            });
+
+            if (searchQuery === "") {
+                return; // 如果搜索框为空，直接返回
+            }
+
+            // 查找匹配的算子
+            operators.forEach(op => {
+                const operatorName = op.textContent.toLowerCase();
+                const operatorId = op.getAttribute('href').substring(1); // 获取目标算子ID
+
+                if (operatorName.includes(searchQuery)) {
+                    found = true; // 标记为找到匹配项
+                    op.classList.add('highlight');  // 高亮显示匹配项
+                }
+            });
+
+            // 如果没有找到匹配的算子，弹出提示框
+            if (!found) {
+                alert('没有找到相关算子，请检查输入');
+            } else {
+                // 如果找到匹配的算子，滚动到第一个匹配项
+                const firstMatch = document.querySelector('.operator-link.highlight');
+                if (firstMatch) {
+                    const targetId = firstMatch.getAttribute('href').substring(1); // 获取目标算子ID
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            }
+        }
+
+        // 实现页面回到顶部功能
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'  // 平滑滚动
+            });
+        }
+
+        let isSidebarCollapsed = false;  // 控制导航栏的状态
+
+        // 切换左侧导航栏的显示和隐藏
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');  // 获取导航栏
+            const content = document.querySelector('.content');  // 获取右侧内容区
+            const toggleBtn = document.getElementById('sidebarToggle');  // 获取按钮
+
+            if (isSidebarCollapsed) {
+                // 展开导航栏
+                sidebar.style.left = '0';  // 恢复导航栏位置
+                content.style.marginLeft = '280px';  // 右侧内容区域宽度恢复
+                content.style.width = 'calc(100% - 280px)'; // 确保右侧内容区的宽度恢复
+                toggleBtn.classList.remove('collapsed');  // 恢复按钮位置
+                isSidebarCollapsed = false;
+            } else {
+                // 收起导航栏
+                sidebar.style.left = '-280px';  // 隐藏导航栏
+                content.style.marginLeft = '0';  // 右侧内容区域占满整个页面
+                content.style.width = '100%';  // 让右侧内容区占满整个页面
+                toggleBtn.classList.add('collapsed');  // 将按钮移到左侧
+                isSidebarCollapsed = true;
+            }
+        }
+
+        // 等待 DOM 内容加载完成后，绑定点击事件
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('sidebarToggle');
+            toggleBtn.addEventListener('click', toggleSidebar);  // 绑定点击事件
+        });
     </script>
 </body>
 </html>

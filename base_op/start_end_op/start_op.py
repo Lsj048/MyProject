@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class StartOp(Op):
     """
-    【local】返回特定表的启动算子
+    Function:
+        返回特定表的启动算子
 
     Attributes:
         target_table_name (str): 目标表名。

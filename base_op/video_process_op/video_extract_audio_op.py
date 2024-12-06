@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class VideoExtractAudioOp(Op):
     """
-    【local】抽取音频算子，从视频文件中抽取音频文件，可以选择音频类型为wav或mp3
+    Function:
+        抽取音频算子，从视频文件中抽取音频文件，可以选择音频类型为wav或mp3
 
     Attributes:
         video_file_column (str, optional): 视频文件路径所在的列名，默认为"video_file_path"。

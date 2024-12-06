@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class ExtractColumnFromPBOp(Op):
     """
-    【local】从 Protobuf 列中提取列算子，将 Protobuf 列转换为字典后用 jsonpath 匹配方式提取
+    Function:
+        从 Protobuf 列中提取列算子，将 Protobuf 列转换为字典后用 jsonpath 匹配方式提取
 
     Attributes:
         pb_column (str): Protobuf 列名。

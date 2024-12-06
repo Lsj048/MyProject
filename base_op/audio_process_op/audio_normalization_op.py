@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class AudioNormalizationOp(Op):
     """
-    【local】音频标准化算子，使其达到标准的音量强度，输出标准化后音频文件路径
+    Function:
+        音频标准化算子，使其达到标准的音量强度，输出标准化后音频文件路径
 
     Attributes:
         audio_file_column (str): 音频文件路径所在列的名称，默认为"audio_file_path"。

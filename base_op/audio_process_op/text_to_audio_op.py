@@ -13,7 +13,8 @@ from video_graph.op_context import OpContext
 
 class TextToAudioOp(Op):
     """
-    【remote】文字转音频TTS算子，支持Azure和Minimax两种TTS引擎，根据reading_track自动选择不同的引擎，输出音频文件、音频时长和音频字幕
+    Function:
+        文字转音频TTS算子，支持Azure和Minimax两种TTS引擎，根据reading_track自动选择不同的引擎，输出音频文件、音频时长和音频字幕
 
     Attributes:
         text_column (str): 文本列名，默认为"text"

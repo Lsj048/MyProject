@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class AudioExtractFeatureOp(Op):
     """
-    【remote】音频特征提取算子，用于提取音频文件的特征，输出音频特征
+    Function:
+        音频特征提取算子，用于提取音频文件的特征，输出音频特征
 
     Attributes:
         audio_file_column (str): 音频文件列的名称，默认为"audio_file"。

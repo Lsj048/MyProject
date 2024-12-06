@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class AddTtsOp(Op):
     """
-    增加TTS算子
+    Function:
+        增加TTS算子
 
     Attributes:
         request_column (str): 请求列名，默认为"request"。

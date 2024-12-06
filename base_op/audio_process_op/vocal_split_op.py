@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class VocalSplitOp(Op):
     """
-    【remote】人声分离算子，用于分离出音频文件中的人声部分，输出人声分离后的音频blob资源
+    Function:
+        人声分离算子，用于分离出音频文件中的人声部分，输出人声分离后的音频blob资源
 
     Attributes:
         audio_blob_key_column (str): 音频BlobKey列的名称，默认为"audio_blob_key"。

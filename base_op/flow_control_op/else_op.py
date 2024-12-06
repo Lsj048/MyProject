@@ -4,7 +4,8 @@ from video_graph.op_context import OpContext
 
 class ElseOp(Op):
     """
-    【local】else分支算子，与IfOp配合使用，用于处理IfOp条件表达式为False的情况
+    Function:
+        else分支算子，与IfOp配合使用，用于处理IfOp条件表达式为False的情况
 
     Attributes:
         无

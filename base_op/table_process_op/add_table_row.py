@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class AddTableRow(Op):
     """
-    【local】在表里增加行，增加的行的列默认值为0/None
+    Function:
+        在表里增加行，增加的行的列默认值为0/None
 
     Attributes:
         row_num (int): 增加的行数

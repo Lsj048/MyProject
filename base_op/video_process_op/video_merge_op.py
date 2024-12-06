@@ -6,8 +6,9 @@ from video_graph.op_context import OpContext
 
 class VideoMergeOp(Op):
     """
-    【local】根据视频下标列做聚合, 将多个视频切片合并成一个视频。
-    其中，视频下表列的格式应为 {video_index}_{segment_index}, 同一 video_index 的多个切片按照 segment_index 顺序合并
+    Function:
+        根据视频下标列做聚合, 将多个视频切片合并成一个视频。
+        其中，视频下表列的格式应为 {video_index}_{segment_index}, 同一 video_index 的多个切片按照 segment_index 顺序合并
 
     Attributes:
         input:

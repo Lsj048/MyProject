@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class SubtitleSplitOp(Op):
     """
-    【local】字幕切分算子，用于将字幕文本切分成词语
+    Function:
+        字幕切分算子，用于将字幕文本切分成词语
 
     Attributes:
         tts_caption_column (str): 字幕文本所在列的名称，默认为 "tts_caption"。

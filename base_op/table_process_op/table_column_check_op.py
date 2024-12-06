@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class TableColumnCheckOp(Op):
     """
-    【local】过滤掉列值异常（None/NaN）的行
+    Function:
+        过滤掉列值异常（None/NaN）的行
 
     Args:
         column_list (list): 列名列表，用于指定需要检查的列

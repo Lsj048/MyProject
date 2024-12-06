@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class CumsumColumnOp(Op):
     """
-    【local】计算某列的累积和算子，列值必须为数值类型（int64/float64）
+    Function:
+        计算某列的累积和算子，列值必须为数值类型（int64/float64）
 
     Attributes:
         source_column (str): 源列名

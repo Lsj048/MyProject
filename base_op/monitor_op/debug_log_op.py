@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class DebugLogOp(Op):
     """
-    【local】DebugLog调试算子，打印Table内容，用于调试和问题排查
+    Function:
+        DebugLog调试算子，打印Table内容，用于调试和问题排查
 
     Attributes:
         print_columns (Union[str, List[str]]): 需要打印的列名，默认为None。

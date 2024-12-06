@@ -11,11 +11,12 @@ from video_graph.op_context import OpContext
 
 class AddSubtitleTrackByMultiShotOp(Op):
     """
-    【local】从标准输入表中添加字幕，基于一个标准结构subtitle_group来生成，其中包含四部分：
-    * start_time：字幕开始时间
-    * end_time：字幕结束时间
-    * items_list：文本词列表
-    * keywords_list：关键字列表
+    Function:
+        从标准输入表中添加字幕，基于一个标准结构subtitle_group来生成，其中包含四部分：
+        * start_time：字幕开始时间
+        * end_time：字幕结束时间
+        * items_list：文本词列表
+        * keywords_list：关键字列表
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

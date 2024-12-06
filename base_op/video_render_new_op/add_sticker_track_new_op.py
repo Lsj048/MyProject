@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class AddStickerTrackNewOp(Op):
     """
-    【local】添加贴纸算子，sticker_index为-1时，表示批量增加贴纸到一条轨道上，时空上叠加，否则表示增加单个贴纸到轨道上
+    Function:
+        添加贴纸算子，sticker_index为-1时，表示批量增加贴纸到一条轨道上，时空上叠加，否则表示增加单个贴纸到轨道上
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class TextVideoAsrAlignmentOp(Op):
     """
-    【local】文本和视频ASR对齐算子，输出ASR字幕和视频列表
+    Function:
+        文本和视频ASR对齐算子，输出ASR字幕和视频列表
 
     Attributes:
         asr_texts_column (str): ASR文本列名，默认为"asr_texts"

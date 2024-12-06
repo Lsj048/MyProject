@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class ConvertScriptToMultiShotOp(Op):
     """
-    【remote】单镜脚本升级为多镜，通过 gpt4o 实现
+    Function:
+        单镜脚本升级为多镜，通过 gpt4o 实现
 
     Attributes:
         single_script_column (str): 单镜脚本列名，默认为 "single_script"。

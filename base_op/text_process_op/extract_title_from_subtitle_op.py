@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class ExtractTitleFromSubtitleOp(Op):
     """
-    【remote】从台词中提取标题，通过 gpt4o 实现
+    Function:
+        从台词中提取标题，通过 gpt4o 实现
 
     Attributes:
         subtitle_column (str): 字幕列名，默认为 "subtitle"。

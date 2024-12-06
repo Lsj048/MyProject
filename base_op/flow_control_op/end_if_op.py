@@ -4,7 +4,8 @@ from video_graph.op_context import OpContext
 
 class EndIfOp(Op):
     """
-    【local】end_if算子，与IfOp和ElseOp配合使用，用于结束条件表达式的处理
+    Function:
+        end_if算子，与IfOp和ElseOp配合使用，用于结束条件表达式的处理
 
     Attributes:
         无

@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class GetImageSizeOp(Op):
     """
-    【local】获取图片宽高算子，用于获取图片的宽度和高度
+    Function:
+        获取图片宽高算子，用于获取图片的宽度和高度
 
     Attributes:
         image_file_path_column (str): 图片文件路径列名，默认为"image_file_path"。

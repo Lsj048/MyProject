@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class CopyColumnOp(Op):
     """
-    【local】两表之间列拷贝算子，拷贝单列到目标表，如果两表行数一致，则可以一一对应的拷贝，否则只能将源表第一行拷贝到目标表的所有行
+    Function:
+        两表之间列拷贝算子，拷贝单列到目标表，如果两表行数一致，则可以一一对应的拷贝，否则只能将源表第一行拷贝到目标表的所有行
 
     Attributes:
         source_column (str): 源列名

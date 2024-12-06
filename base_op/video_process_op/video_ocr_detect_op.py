@@ -16,7 +16,8 @@ from video_graph.op_context import OpContext
 
 class VideoOcrDetectOp(Op):
     """
-    【remote】视频OCR检测算子，输出ocr结果和subtitle信息
+    Function:
+        视频OCR检测算子，输出ocr结果和subtitle信息
 
     Attributes:
         video_blob_key_column (str): 视频BlobKey所在的列名，默认为"video_blob_key"

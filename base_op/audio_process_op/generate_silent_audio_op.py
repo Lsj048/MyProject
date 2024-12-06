@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class GenerateSilentAudioOp(Op):
     """
-    【local】生成静音音频算子，用于生成指定时长的静音音频文件，输出静音音频文件路径
+    Function:
+        生成静音音频算子，用于生成指定时长的静音音频文件，输出静音音频文件路径
 
     Attributes:
         silent_audio_duration_column (str): 静音音频时长列的名称，默认为"audio_duration"。

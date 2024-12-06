@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class ExtractColumnFromListOp(Op):
     """
-    【local】从列表列中提取列算子，支持提取指定索引的值到新列
+    Function:
+        从列表列中提取列算子，支持提取指定索引的值到新列
 
     Attributes:
         list_column (str): 列表列名。

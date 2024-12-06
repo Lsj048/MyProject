@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class InsertColumnByRandomListOp(Op):
     """
-    【local】从随机列表中添加列，随机选择列表中的值填充新列
+    Function:
+        从随机列表中添加列，随机选择列表中的值填充新列
 
     Attributes:
         column_name (str): 列名

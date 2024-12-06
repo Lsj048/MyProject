@@ -10,7 +10,8 @@ from video_graph.op_context import OpContext
 
 class AddTitleTrackOP(Op):
     """
-    【local】增加标题轨道算子，可以设置标题的字体、颜色、描边等属性以及标题的位置、对齐方式等
+    Function:
+        增加标题轨道算子，可以设置标题的字体、颜色、描边等属性以及标题的位置、对齐方式等
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

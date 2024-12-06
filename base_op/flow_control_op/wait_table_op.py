@@ -4,7 +4,8 @@ from video_graph.op_context import OpContext
 
 class WaitTableOp(Op):
     """
-    【local】等待表全部ready算子，虽然与ElseOp、EndIfOp代码相同，但行为不一致，ElseOp、EndIfOp会在框架层面有对应的特殊逻辑，而WaitTableOp没有
+    Function:
+        等待表全部ready算子，虽然与ElseOp、EndIfOp代码相同，但行为不一致，ElseOp、EndIfOp会在框架层面有对应的特殊逻辑，而WaitTableOp没有
 
     Attributes:
         无

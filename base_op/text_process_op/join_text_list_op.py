@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class JoinTextListOp(Op):
     """
-    【local】文本list合并为一段文本
+    Function:
+        文本list合并为一段文本
 
     Attributes:
         text_list_column (str): 待合并的文本list列名，默认为"text_list"。

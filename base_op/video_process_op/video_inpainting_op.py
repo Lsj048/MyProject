@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class VideoInpaintingOp(Op):
     """
-    【remote】视频字幕擦除算子，使用商业化的inpainting服务进行字幕擦除
+    Function:
+        视频字幕擦除算子，使用商业化的inpainting服务进行字幕擦除
 
     Attributes:
         input:

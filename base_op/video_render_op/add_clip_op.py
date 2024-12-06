@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class AddClipOp(Op):
     """
-    增加镜号算子
+    Function:
+        增加镜号算子
 
     Attributes:
         request_column (str): 请求列名，默认为"request"。

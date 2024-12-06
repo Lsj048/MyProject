@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class VideoBaseInfoOp(Op):
     """
-    【local】提取视频的基本信息，输出视频的时长、帧率、宽度和高度
+    Function:
+        提取视频的基本信息，输出视频的时长、帧率、宽度和高度
 
     Attributes:
         video_file_column (str): 视频文件路径所在的列名，默认为"video_file_path"

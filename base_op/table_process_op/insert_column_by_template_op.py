@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class InsertColumnByTemplateOp(Op):
     """
-    【local】基于模版插入新列算子，支持多列值嵌入的模版字符串
+    Function:
+        基于模版插入新列算子，支持多列值嵌入的模版字符串
 
     Attributes:
         template (str): 模版字符串

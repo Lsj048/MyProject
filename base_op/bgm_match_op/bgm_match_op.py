@@ -10,7 +10,8 @@ from video_graph.op_context import OpContext
 
 class BgmMatchOp(Op):
     """
-    【remote】音乐匹配算子，用于为视频列表匹配BGM，如果匹配不到则随机选择BGM，如果匹配到多个BGM则随机选择一个
+    Function:
+        音乐匹配算子，用于为视频列表匹配BGM，如果匹配不到则随机选择BGM，如果匹配到多个BGM则随机选择一个
 
     Attributes:
         video_list_column (str): 视频列表列名，默认为"video_list"。

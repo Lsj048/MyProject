@@ -6,7 +6,8 @@ from video_graph.op_context import OpContext
 
 class TableRowFilterOp(Op):
     """
-    【local】表的行过滤算子，建议用TableQueryOp
+    Function:
+        表的行过滤算子，建议用TableQueryOp
 
     Attributes:
         inplace (bool): 是否在原表上进行操作，默认为 True

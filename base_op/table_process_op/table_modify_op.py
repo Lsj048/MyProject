@@ -5,9 +5,9 @@ from video_graph.op_context import OpContext
 
 class TableModifyOp(Op):
     """
-    【local】基于pandas的eval接口实现的表修改算子
-    表达式用法类似于query，但eval可以对列值做操作
-    用法参考：https://jakevdp.github.io/PythonDataScienceHandbook/03.12-performance-eval-and-query.html
+    Function:
+        基于pandas的eval接口实现的表修改算子，表达式用法类似于query，但eval可以对列值做操作
+        用法参考：https://jakevdp.github.io/PythonDataScienceHandbook/03.12-performance-eval-and-query.html
 
     Attributes:
         expression (str): 修改表达式

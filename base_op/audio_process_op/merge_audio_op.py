@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class MergeAudioOp(Op):
     """
-    【local】音频合并算子，用于合并音频文件列表中的音频文件，输出合并后音频文件路径
+    Function:
+        音频合并算子，用于合并音频文件列表中的音频文件，输出合并后音频文件路径
 
     Attributes:
         audio_file_list_column (str): 音频文件列表列的名称，默认为"audio_file_list"。

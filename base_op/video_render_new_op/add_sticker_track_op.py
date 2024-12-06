@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class AddStickerTrackOp(Op):
     """
-    【local】添加贴纸算子，可以设置贴纸的位置、大小、缩放比例等
+    Function:
+        添加贴纸算子，可以设置贴纸的位置、大小、缩放比例等
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

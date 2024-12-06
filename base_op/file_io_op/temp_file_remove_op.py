@@ -8,7 +8,8 @@ from video_graph.op_context import OpContext
 
 class TempFileRemoveOp(Op):
     """
-    【local】临时文件删除算子，用于删除指定的文件或目录
+    Function:
+        临时文件删除算子，用于删除指定的文件或目录
 
     Attributes:
         file_path_columns (str or List[str]): 指定要删除的文件路径列名或列名列表。

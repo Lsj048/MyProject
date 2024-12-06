@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class PerfOp(Op):
     """
-    【local】Perf打点算子，用于监控性能指标和业务指标
+    Function:
+        Perf打点算子，用于监控性能指标和业务指标
 
     Attributes:
         subtag (str): 打点的子标签，默认为空字符串。

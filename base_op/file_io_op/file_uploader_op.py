@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class FileUploaderOp(Op):
     """
-    【local】文件上传算子，用于上传本地文件到 Blob 存储
+    Function:
+        文件上传算子，用于上传本地文件到 Blob 存储
 
     Attributes:
         file_blob_key_column (str): 输入表中表示文件 Blob Key 的列名。

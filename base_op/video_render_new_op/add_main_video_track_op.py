@@ -13,7 +13,8 @@ from video_graph.op_context import OpContext
 
 class AddMainVideoTrackOp(Op):
     """
-    【local】增加主视频轨算子，video_index为-1时，表示批量增加视频到一条轨道上，按添加时间依次排列，否则表示增加单个视频到轨道上
+    Function:
+        增加主视频轨算子，video_index为-1时，表示批量增加视频到一条轨道上，按添加时间依次排列，否则表示增加单个视频到轨道上
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

@@ -7,7 +7,8 @@ from video_graph.op_context import OpContext
 
 class AddSubtitleOp(Op):
     """
-    增加字幕算子
+    Function:
+        增加字幕算子
 
     Attributes:
         request_column (str): 请求列名，默认为"request"。

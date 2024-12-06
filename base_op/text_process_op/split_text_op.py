@@ -5,7 +5,8 @@ from video_graph.op_context import OpContext
 
 class SplitTextOp(Op):
     """
-    【local】文本list合并为一段文本
+    Function:
+        文本list合并为一段文本
 
     Attributes:
         text_column (str): 待合并的文本列名，默认为"text"。

@@ -1,7 +1,9 @@
 /* 左侧导航栏 */
 .sidebar {
     width: 280px;
-    background: linear-gradient(180deg, #009688, #00796b);
+    height: 100hv;
+    /*background: linear-gradient(180deg, #009688, #00796b);*/
+    background-color: rgba(72, 179, 129, 0.80); /* 更具层次感的淡绿色 */
     padding: 20px 15px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -13,6 +15,42 @@
     overflow-y: auto;
     transition: left 0.3s ease, width 0.3s ease; /* 添加平滑过渡 */
 }
+/* 收起/展开按钮样式 */
+.sidebar-toggle-btn {
+    position: fixed;
+    top: 65px;  /* 距离顶部 20px */
+    left: 235px;  /* 按钮位置和导航栏初始位置对齐 */
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: left 0.3s ease, width 0.3s ease; /* 添加平滑过渡 */
+    z-index: 1100;  /* 确保按钮位于最上层 */
+}
+/* 收起按钮时 */
+.sidebar-toggle-btn.collapsed {
+    left: 0;  /* 收起时按钮移到左侧 */
+}
+/* 导航栏收起时 */
+.sidebar.collapsed {
+    left: -290px; /* 将导航栏完全移出屏幕 */
+    width: 0; /* 设置宽度为 0 */
+}
+
+/* 收起状态下，内容区宽度变化 */
+.sidebar.collapsed + .content {
+    margin-left: 0;
+    width: 100%
+}
+
 
 /* 导航栏标题 */
 .sidebar h2 {
@@ -23,38 +61,12 @@
     font-weight: 600;
 }
 
-/* 左侧导航栏的隐藏/收起样式 */
-.sidebar.collapsed {
-    left: -280px; /* 隐藏导航栏 */
-    width: 0; /* 收起时宽度为 0 */
-}
-
-/* 为导航栏按钮添加样式 */
-.sidebar .toggle-btn {
-    position: absolute;
-    top: 20px;
-    right: -40px; /* 放置在导航栏右侧 */
-    width: 30px;
-    height: 30px;
-    background-color: #00796b;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 增加按钮阴影效果 */
-}
-
-
 /* 分类分组样式 */
 .category {
     margin-bottom: 0px;  /* 进一步减小分类之间的间距 */
     border-radius: 10px;  /* 圆角效果 */
     transition: all 0.3s ease; /* 平滑过渡 */
+    margin-left: -18px; /* 向左偏移 */
 }
 
 /* 鼠标悬停时的背景色变化 */
@@ -127,8 +139,8 @@
     background: #ffffff; /* 白色背景 */
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
-
 /* 右侧内容区标题 */
 .content h1 {
     font-size: 32px; /* 增加字体大小 */
@@ -136,7 +148,72 @@
     text-align: center; /* 居中 */
     margin-top: 0;
 }
+/* 搜索框容器样式 */
+.search-container {
+    position: relative;
+    width: 100%;  /* 使容器占满父元素的宽度 */
+    max-width: 600px;  /* 更宽的最大宽度，增加至 600px */
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;  /* 左右居中 */
+    margin-right: auto;
+}
 
+/* 搜索框样式 */
+#searchInput {
+    width: 80%;  /* 使其适应父容器的 80% */
+    padding: 10px 40px 10px 10px;  /* 右侧留出空间给图标 */
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1px solid #00796b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* 当搜索框获得焦点时的效果 */
+#searchInput:focus {
+    border-color: #004d40;
+}
+
+/* 查找按钮（图标） */
+.search-btn {
+    position: absolute;
+    right: 45px;  /* 设置在输入框的右侧 */
+    top: 50%;
+    transform: translateY(-50%);  /* 使按钮垂直居中 */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    color: #00796b;
+    transition: color 0.3s ease;
+}
+
+/* 高亮显示匹配的算子 */
+.operator-link.highlight {
+    background-color: #b2e7b2;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* 关于video-graph的超链接样式 */
+.about-link {
+    font-size: 15px;
+    color: #00796b;
+    position: absolute;
+    top: 115px;  /* 距离内容区域顶部 */
+    right: 20px; /* 距离右侧 20px */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-weight: bold
+}
+
+.about-link:hover {
+    color: #004d40; /* 鼠标悬停时变色 */
+}
 /* 算子信息展示 */
 .operator-info {
     margin-bottom: 20px; /* 缩小每个算子信息间的间距 */
@@ -180,14 +257,52 @@
     margin-bottom: 10px; /* 合理的间距 */
     color: #555; /* 中灰色 */
 }
+/*功能字段描述*/
+.operator-function {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
 
+.operator-card h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.operator-card ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.operator-card ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.operator-card pre {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.operator-card code {
+    font-size: 13px;
+    color: #333;
+}
 /* 示例代码展示的样式 */
 pre {
     background-color: #f0f8ff; /* 淡蓝色背景 */
     color: #333; /* 深灰色文字 */
     padding: 15px;
     border-radius: 8px;
-    font-size: 14px; /* 调小字体大小 */
+    font-size: 11px; /* 调小字体大小 */
     line-height: 1.6; /* 增加行间距 */
     overflow-x: auto;
     white-space: pre-wrap; /* 自动换行 */
@@ -203,7 +318,7 @@ pre:hover {
 .python-icon {
     width: 20px;
     height: 20px;
-    background-image: url('/static/images/python-icon.svg'); /* 使用 Python 图标 */
+    /*background-image: url('/static/images/python-icon.svg'); /* 使用 Python 图标 */
     background-size: cover;
     margin-left: 10px; /* 给图标添加左间距 */
     vertical-align: middle;
@@ -242,7 +357,7 @@ pre:hover {
 
 /* 调整每个算子名称的间距 */
 .operator-link {
-    margin-bottom: 6px; /* 增加算子名称与其它项之间的间距 */
+    margin-bottom: 8px; /* 增加算子名称与其它项之间的间距 */
 }
 
 /* 响应式设计：当浏览器宽度小于 768px 时 */
@@ -270,4 +385,34 @@ pre:hover {
     .operator-info {
         padding: 15px; /* 减小内边距 */
     }
+}
+/* 悬浮按钮样式 */
+.back-to-top-btn {
+    position: fixed;
+    top: 90%; /* 垂直居中 */
+    right: 30px; /* 距离右侧 20px */
+    transform: translateY(-50%); /* 垂直方向上完全居中 */
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+    background-color: #004d40;  /* 鼠标悬停时改变背景色 */
+    transform: scale(1.1) translateY(-50%);  /* 鼠标悬停时放大按钮 */
+}
+
+/* 返回顶部按钮中的图标 */
+.back-to-top-btn i {
+    color: white;
 }

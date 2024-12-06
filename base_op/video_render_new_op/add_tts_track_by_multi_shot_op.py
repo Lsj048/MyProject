@@ -9,7 +9,8 @@ from video_graph.op_context import OpContext
 
 class AddTtsTrackByMultiShotOp(Op):
     """
-    【local】从标准输入表中添加TTS，基于audio_blob_key、audio_duration、need_tts三个字段来生成
+    Function:
+        从标准输入表中添加TTS，基于audio_blob_key、audio_duration、need_tts三个字段来生成
 
     Attributes:
         project_model_builder_column (str): 项目模型构建器列名，默认为"project_model_builder"。

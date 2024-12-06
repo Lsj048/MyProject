@@ -83,6 +83,6 @@ def image(filename):
   return send_from_directory('image', filename)
 
 if __name__ == '__main__':
-    #port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000
-    #app.run(debug=False, host='0.0.0.0', port=port)
-    app.run(debug=False)
+    port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000
+    app.run(debug=False, host='0.0.0.0', port=port)
+    #app.run(debug=False)

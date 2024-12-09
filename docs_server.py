@@ -1,7 +1,8 @@
+import textwrap
 from doctest import debug
 
 import markdown2
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, jsonify
 import os
 import ast
 import re
@@ -10,19 +11,22 @@ app = Flask(__name__)
 
 # 读取指定路径下所有算子的信息
 def get_operator_info():
-    operators_info = {}
+    base_operators_info = {}
+    extend_operators_info = {}
 
     # 获取所有子文件夹（每个子文件夹代表一个功能类别）
-    base_dir = './base_op'
-    for category in os.listdir(base_dir):
-        category_path = os.path.join(base_dir, category)
-        if os.path.isdir(category_path):
-            operators_info[category] = []
-            for file_name in os.listdir(category_path):
-                if file_name.endswith('.py'):
-                    op_info = parse_operator_file(os.path.join(category_path, file_name))
-                    operators_info[category].append(op_info)
-    return operators_info
+    base_dirs = ['./算子列表/base_op', './算子列表/extend_op']
+    for base_dir in base_dirs:
+        operators_info = base_operators_info if base_dir.endswith('base_op') else extend_operators_info
+        for category in os.listdir(base_dir):
+            category_path = os.path.join(base_dir, category)
+            if os.path.isdir(category_path):
+                operators_info[category] = []
+                for file_name in os.listdir(category_path):
+                    if file_name.endswith('.py'):
+                        op_info = parse_operator_file(os.path.join(category_path, file_name))
+                        operators_info[category].append(op_info)
+    return base_operators_info, extend_operators_info
 
 # 解析算子的 Python 文件
 def parse_operator_file(file_path):
@@ -69,20 +73,26 @@ def parse_operator_file(file_path):
 
 @app.route('/')
 def index():
-    operators_info = get_operator_info()
-    return render_template('index.html', operators_info=operators_info)
-
-@app.route('/introduction')
+    base_operators_info, extend_operators_info = get_operator_info()
+    return render_template('index.html', base_operators_info=base_operators_info, extend_operators_info=extend_operators_info)
+# 渲染关于 video-graph 的介绍 (Markdown 格式)
+@app.route('/about')
 def about_video_graph():
-    with open('wiki/introduction.md', 'r', encoding='utf-8') as file:
+    # 读取 Markdown 文件
+    with open('static/markdown/introduction.md', 'r', encoding='utf-8') as file:
         content = file.read()
-    html_content = markdown2.markdown(content, extras=["fenced-code-blocks"])
-    return render_template('introduction.html', content=html_content)
+
+    # 使用 markdown2 将 Markdown 转换为 HTML
+    html_content = markdown2.markdown(content, extras=["fenced-code-blocks", "tables"])
+
+    # 渲染 about.html 页面并传递 HTML 内容
+    return render_template('about.html', content=html_content)
+
+# 渲染图片
 @app.route('/image/<filename>', methods=['GET'])
 def image(filename):
   return send_from_directory('image', filename)
-
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000
-    app.run(debug=False, host='0.0.0.0', port=port)
-    #app.run(debug=False)
+    #port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000
+    #app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(debug=False)

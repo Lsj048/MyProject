@@ -1,6 +1,6 @@
 /* 左侧导航栏 */
 .sidebar {
-    width: 280px;
+    width: 240px;
     height: 100hv;
     /*background: linear-gradient(180deg, #009688, #00796b);*/
     background-color: rgba(72, 179, 129, 0.80); /* 更具层次感的淡绿色 */
@@ -54,16 +54,15 @@
 
 /* 导航栏标题 */
 .sidebar h2 {
-    font-size: 32px; /* 增加字体大小 */
+    font-size: 30px; /* 增加字体大小 */
     color: #ffffff; /* 白色字体 */
     margin-bottom: 25px; /* 增加标题下间距 */
     text-align: center; /* 居中对齐 */
     font-weight: 600;
 }
-
 /* 分类分组样式 */
 .category {
-    margin-bottom: 0px;  /* 进一步减小分类之间的间距 */
+    margin-bottom: 2px;  /* 进一步减小分类之间的间距 */
     border-radius: 10px;  /* 圆角效果 */
     transition: all 0.3s ease; /* 平滑过渡 */
     margin-left: -18px; /* 向左偏移 */
@@ -79,12 +78,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 18px; /* 更小的内边距 */
+    padding: 2px 4px; /* 更小的内边距 */
     cursor: pointer;
-    font-size: 20px; /* 增加字体大小 */
+    font-size: 18px; /* 增加字体大小 */
     color: #ffffff; /* 白色字体 */
     font-weight: 500;
     transition: all 0.3s ease;
+    margin-bottom: 4px;
+    padding: 4px 8px;
 }
 
 .category-header:hover {
@@ -95,40 +96,43 @@
 .operator-list {
     list-style-type: none;
     padding-left: 0;
-    max-height: 0;
+    transition: height 0.3s ease-out;
     overflow: hidden;
-    transition: max-height 0.4s ease-out;
-}
-
-/* 去掉算子名称的背景颜色 */
-.operator-list li {
-    margin: 6px 0; /* 增加算子名称间距 */
-    text-align: center; /* 居中显示算子名称 */
+    height: 0
+    margin: 0;
+    padding:0 10px;
 }
 
 /* 算子名称居中，去除背景色 */
 .operator-link {
     text-decoration: none;
     color: #ffffff; /* 白色字体 */
-    font-size: 16px; /* 增加字体大小 */
-    padding: 8px 12px; /* 更小的内边距 */
+    font-size: 15px; /* 增加字体大小 */
+    padding: 10px 14px; /* 更小的内边距 */
     border-radius: 5px;
     display: inline-block; /* 让链接变成块元素，以便更好居中 */
     transition: all 0.3s ease;
+    background-color:transparent;
 }
 
 /* 算子名称悬停效果 */
 .operator-link:hover {
-    background-color: #00796b; /* 强烈背景色变化 */
+    background-color: #00796b;  /*强烈背景色变化 */
+    /*background-color:transparent;*/
     color: #ffffff; /* 白色字体 */
     font-weight: 600; /* 加粗字体 */
 }
 
-/* 当类别展开时 */
-.operator-list.open {
-    max-height: 100vh; /* 可以考虑根据内容高度设置为 vh，避免过长的列表溢出 */
-    transform: scaleY(1); /* 使用 scaleY 更加平滑 */
-    transition: transform 0.3s ease-in-out, max-height 0.3s ease-out; /* 添加动画 */
+
+.operator-list.collapsed {
+    height: 0;  /* 收起时，设置高度为 0 */
+    overflow: hidden;
+}
+
+/* 目录项展开时，使用 auto 高度 */
+.operator-list:not(.collapsed) {
+    height: auto;  /* 展开时，内容区域自动适应 */
+    overflow: visible;
 }
 
 /* 右侧内容区 */
@@ -140,6 +144,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    overflow-y: auto;
 }
 /* 右侧内容区标题 */
 .content h1 {
@@ -148,6 +153,12 @@
     text-align: center; /* 居中 */
     margin-top: 0;
 }
+.content p{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333
+}
+
 /* 搜索框容器样式 */
 .search-container {
     position: relative;
@@ -327,37 +338,6 @@ pre:hover {
 
 .python-icon:hover {
     transform: scale(1.2); /* 鼠标悬停时图标放大 */
-}
-
-/* 页面滚动平滑跳转 */
-.operator-link {
-    text-decoration: none;
-    color: #006e32;
-    font-size: 18px; /* 增加字体大小 */
-    padding: 10px;
-    background: #d1f2d1;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.operator-link:hover {
-    background-color: #b2e7b2;
-    color: #fff;
-}
-
-/* 左侧导航栏的悬停效果 */
-.category-header:hover {
-    color: #e0e0e0; /* 增加颜色过渡 */
-}
-
-/* 让每个分组的内容更紧凑 */
-.operator-list li {
-    margin: 4px 0; /* 进一步减小算子名称之间的间距 */
-}
-
-/* 调整每个算子名称的间距 */
-.operator-link {
-    margin-bottom: 8px; /* 增加算子名称与其它项之间的间距 */
 }
 
 /* 响应式设计：当浏览器宽度小于 768px 时 */

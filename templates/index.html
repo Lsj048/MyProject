@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>算子信息展示</title>
+    <title>算子学习网站</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- 引入 Font Awesome 图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -18,62 +16,126 @@
 
         <!-- 左侧导航栏 -->
         <div class="sidebar">
-            <h2>算子列表</h2>
+            <h2>导航栏</h2>
             <ul>
-                {% for category, operators in operators_info.items() %}
-                    <li class="category">
-                        <div class="category-header" onclick="toggleCategory('{{ category }}')">
-                            <h3>{{ category }}</h3>
-                        </div>
-                        <ul id="{{ category }}" class="operator-list">
-                            {% for operator in operators %}
-                                <li>
-                                    <a href="#{{ operator.name }}" class="operator-link">{{ operator.name }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                {% endfor %}
+                <!-- base_op 目录 -->
+                <li class="category">
+                    <div class="category-header" onclick="toggleCategory('base_op')">
+                        <h3>基础算子</h3>
+                    </div>
+                    <ul id="base_op" class="operator-list">
+                        {% for base_category, base_operators in base_operators_info.items() %}
+                            <li class="subcategory">
+                                <div class="category-header" onclick="toggleCategory('{{ base_category }}')">
+                                    <h4>{{ base_category }}</h4>
+                                </div>
+                                <ul id="{{ base_category }}" class="operator-list">
+                                    {% for base_operator in base_operators %}
+                                        <li>
+                                            <a href="#{{ base_operator.name }}" class="operator-link">{{ base_operator.name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
+                <!-- extend_op 目录 -->
+                <li class="category">
+                    <div class="category-header" onclick="toggleCategory('extend_op')">
+                        <h3>拓展算子</h3>
+                    </div>
+                    <ul id="extend_op" class="operator-list">
+                        {% for extend_category, extend_operators in extend_operators_info.items() %}
+                            <li class="subcategory">
+                                <div class="category-header" onclick="toggleCategory('{{ extend_category }}')">
+                                    <h4>{{ extend_category }}</h4>
+                                </div>
+                                <ul id="{{ extend_category }}" class="operator-list">
+                                    {% for extend_operator in extend_operators %}
+                                        <li>
+                                            <a href="#{{ extend_operator.name }}" class="operator-link">{{ extend_operator.name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
             </ul>
         </div>
 
+
         <!-- 右侧内容区 -->
         <div class="content">
-            <h1>video-graph算子学习</h1> <!-- 添加的标题 -->
+            <h1>video-graph算子学习</h1>
+
+            <!--搜索框-->
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="搜索算子..." onkeyup="handleKeyPress(event)">
                 <button class="search-btn" onclick="searchOperators()">
                     <i class="fas fa-search"></i> <!-- 查找图标 -->
                 </button>
             </div>
+
             <a href="/introduction" class="about-link" target="_blank">关于video-graph</a>
-            {% for category, operators in operators_info.items() %}
-                {% for operator in operators %}
-                    <div id="{{ operator.name }}" class="operator-info">
+
+            {% for base_category, base_operators in base_operators_info.items() %}
+                {% for base_operator in base_operators %}
+                    <div id="{{ base_operator.name }}" class="operator-info">
                         <div class="operator-card">
                             <h2>
-                                {{ operator.name }}
-                                {% if operator.href %}
-                                    <a href="{{ operator.href }}" target="_blank" class="operator-link-icon">
+                                {{ base_operator.name }}
+                                {% if base_operator.href %}
+                                    <a href="{{ base_operator.href }}" target="_blank" class="operator-link-icon">
                                         <i class="fab fa-python python-icon"></i>
                                     </a>
                                 {% endif %}
                             </h2>
-                            <h3>Function</h3>
-                            <p class="operator-function">{{ operator.function }}</p>
+                            <p class="operator-function">{{ base_operator.function }}</p>
 
                             <h3>Attributes</h3>
                             <ul>
-                                {% for attr_name, attr_info in operator.attributes.items() %}
+                                {% for attr_name, attr_info in base_operator.attributes.items() %}
                                     <li><strong>{{ attr_name }}:</strong> {{ attr_info.type }} - {{ attr_info.desc }}</li>
                                 {% endfor %}
                             </ul>
                             <h3>Examples</h3>
-                            <pre><code>{{ operator.examples }}</code></pre>
+                            <pre><code>{{ base_operator.examples }}</code></pre>
                         </div>
                     </div>
                 {% endfor %}
             {% endfor %}
+
+            {% for extend_category, extend_operators in extend_operators_info.items() %}
+                {% for extend_operator in extend_operators %}
+                    <div id="{{ extend_operator.name }}" class="operator-info">
+                        <div class="operator-card">
+                            <h2>
+                                {{ extend_operator.name }}
+                                {% if extend_operator.href %}
+                                    <a href="{{ extend_operator.href }}" target="_blank" class="operator-link-icon">
+                                        <i class="fab fa-python python-icon"></i>
+                                    </a>
+                                {% endif %}
+                            </h2>
+                            <p class="operator-function">{{ extend_operator.function }}</p>
+
+                            <h3>Attributes</h3>
+                            <ul>
+                                {% for attr_name, attr_info in extend_operator.attributes.items() %}
+                                    <li><strong>{{ attr_name }}:</strong> {{ attr_info.type }} - {{ attr_info.desc }}</li>
+                                {% endfor %}
+                            </ul>
+                            <h3>Examples</h3>
+                            <pre><code>{{ extend_operator.examples }}</code></pre>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
         </div>
     </div>
 
@@ -83,6 +145,13 @@
     </button>
 
     <script>
+        // 页面加载时，默认收起所有目录
+        window.onload = function() {
+            const operatorLists = document.querySelectorAll('.operator-list');
+            operatorLists.forEach(list => {
+                list.classList.add('collapsed');  // 初始时所有目录都收起
+            });
+        };
         // 页面滚动平滑跳转
         document.querySelectorAll('.operator-link').forEach(link => {
             link.addEventListener('click', function (event) {
@@ -95,23 +164,32 @@
             });
         });
 
-        // 收起/展开类别
+        // 收起/展开目录项
         function toggleCategory(category) {
             const operatorList = document.getElementById(category);
 
-            if (operatorList.style.maxHeight) {
-                operatorList.style.maxHeight = null;
+            if (operatorList.classList.contains('collapsed')) {
+                // 如果是收起状态，展开
+                operatorList.classList.remove('collapsed');
+                operatorList.style.height = 'auto';  // 让内容区自适应高度
             } else {
-                operatorList.style.maxHeight = operatorList.scrollHeight + "px";
+                // 如果是展开状态，收起
+                operatorList.classList.add('collapsed');
+                operatorList.style.height = '0';  // 收起时高度为 0
             }
         }
 
-        // 监听回车键按下事件
-        function handleKeyPress(event) {
-            if (event.key === "Enter") {
-                searchOperators();  // 按下回车键时触发搜索
-            }
-        }
+        // 针对算子名称点击事件，平滑滚动到目标位置
+        document.querySelectorAll('.operator-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);  // 获取跳转的目标 ID
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });  // 平滑滚动到目标元素
+                }
+            });
+        });
 
         // 搜索算子
         function searchOperators() {
@@ -187,7 +265,6 @@
                 isSidebarCollapsed = true;
             }
         }
-
         // 等待 DOM 内容加载完成后，绑定点击事件
         document.addEventListener('DOMContentLoaded', function() {
             const toggleBtn = document.getElementById('sidebarToggle');

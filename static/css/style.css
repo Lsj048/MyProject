@@ -19,7 +19,7 @@
 .sidebar-toggle-btn {
     position: fixed;
     top: 65px;  /* 距离顶部 20px */
-    left: 235px;  /* 按钮位置和导航栏初始位置对齐 */
+    left: 220px;  /* 按钮位置和导航栏初始位置对齐 */
     background-color: #00796b;
     color: white;
     border: none;

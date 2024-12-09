@@ -75,23 +75,7 @@ def parse_operator_file(file_path):
 def index():
     base_operators_info, extend_operators_info = get_operator_info()
     return render_template('index.html', base_operators_info=base_operators_info, extend_operators_info=extend_operators_info)
-# 渲染关于 video-graph 的介绍 (Markdown 格式)
-@app.route('/about')
-def about_video_graph():
-    # 读取 Markdown 文件
-    with open('static/markdown/introduction.md', 'r', encoding='utf-8') as file:
-        content = file.read()
 
-    # 使用 markdown2 将 Markdown 转换为 HTML
-    html_content = markdown2.markdown(content, extras=["fenced-code-blocks", "tables"])
-
-    # 渲染 about.html 页面并传递 HTML 内容
-    return render_template('about.html', content=html_content)
-
-# 渲染图片
-@app.route('/image/<filename>', methods=['GET'])
-def image(filename):
-  return send_from_directory('image', filename)
 if __name__ == '__main__':
     #port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000
     #app.run(debug=False, host='0.0.0.0', port=port)

@@ -1,3 +1,10 @@
+/* 针对Markdown渲染的图片，控制其最大宽度 */
+.content img {
+    max-width: 100%; /* 图片宽度最大为容器的宽度 */
+    height: auto;  /* 高度自适应，保持纵横比 */
+    display: block; /* 将图片设置为块元素，避免与文本并排 */
+    margin: 0 auto; /* 居中显示图片 */
+}
 /* 左侧导航栏 */
 .sidebar {
     width: 240px;

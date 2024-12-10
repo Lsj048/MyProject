@@ -75,6 +75,15 @@ def parse_operator_file(file_path):
 def index():
     base_operators_info, extend_operators_info = get_operator_info()
     return render_template('index.html', base_operators_info=base_operators_info, extend_operators_info=extend_operators_info)
+@app.route('/about')
+def about():
+    with open('static/markdown/introduction.md', 'r') as file:
+        markdown_content = file.read()
+    return markdown_content
+
+@app.route('/image/<filename>', methods=['GET'])
+def image(filename):
+  return send_from_directory('image', filename)
 
 if __name__ == '__main__':
     #port = int(os.environ.get('PORT', 5000))  # 获取端口号，如果没有设置，使用 5000

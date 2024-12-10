@@ -11,7 +11,6 @@ video-graph是一个基于Python搭建的视频生产框架，有以下特点：
 
 video-graph整体框架图：
 ![img.png](../image/video_graph_framework.png)
-
 ## 快速上手
 1. 部署镜像，框架运行依赖了很多python三方包，可以使用这个镜像部署环境：
 `registry.corp.kuaishou.com/kml-ad/ubuntu20.04-video-graph:cuda11-py38-ffmpeg-torch-editor-kernel-20240923-1807`
